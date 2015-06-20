@@ -51,7 +51,10 @@ def getInfo():
 # 用*表达式实现递归(递归:自己调用自己,初始条件)
 lit = [1,2,3,4,5]
 def sumItem(lit):
+<<<<<<< HEAD
     """求列表中所有元素的和"""
+=======
+>>>>>>> a9ce20f84a4016414dfb427ed0188b9e63d7959d
     head, *tail = lit
     return head + sumItem(*tail) if tail else head # 防止溢出
 
@@ -63,4 +66,8 @@ getInfo()
 # 案例3:
 pass
 # 案例4:
+<<<<<<< HEAD
 sumItem(lit)
+=======
+
+>>>>>>> a9ce20f84a4016414dfb427ed0188b9e63d7959d

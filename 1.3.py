@@ -23,7 +23,10 @@ websites = [
     ('Sina', 'http://www.sina.com.cn/', u'王志东'),
     ('163', 'http://www.163.com/', u'丁磊')
 ]
+<<<<<<< HEAD
 # 一旦创建了namedtuple对象，那么这个元组中的元素就可以通过名称访问。
+=======
+>>>>>>> a9ce20f84a4016414dfb427ed0188b9e63d7959d
 Website = namedtuple('Website', ['name', 'url', 'founder']) # Website is a namedtuple Class, and website like self
 for website in websites:
     website = Website._make(website)
@@ -79,6 +82,7 @@ def search(lines, pattern, history=5):
 # example1 use on file
 if __name__ == "__main__":
     with open("1.3.txt") as f:
+<<<<<<< HEAD
         for line, prev_lines in search(f, "python", 5):
             for pline in prev_lines:
                 print(pline, end = '')
@@ -86,4 +90,11 @@ if __name__ == "__main__":
 # defaultdict
 # 详见 1.6.py ！
 # 将列表、集合转化为字典的值并初始化第一个key，从而是程序员直接扩充
+=======
+        for line, prevlines in search(f, "python", 5):
+            for pline in prevlines:
+                print(pline, end='')
+            print(line, end='')
+
+>>>>>>> a9ce20f84a4016414dfb427ed0188b9e63d7959d
 

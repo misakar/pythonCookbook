@@ -30,6 +30,10 @@ print cheap
 """
 补充: 堆数据结构的python实现
     详见:<a href="http://wuchong.me/blog/2014/02/09/algorithm-sort-summary/"></a>
+<<<<<<< HEAD
     堆---是一个最小二叉树，父节点大于或小于两个节点之和(大顶堆和小顶堆)
 """
 
+=======
+"""
+>>>>>>> a9ce20f84a4016414dfb427ed0188b9e63d7959d
