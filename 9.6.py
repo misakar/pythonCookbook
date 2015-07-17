@@ -13,7 +13,6 @@ from functools import partial, wraps
 import logging
 
 def logged(func=None, *, level=logging.DEBUG, name=None, message=None):
-    # 不支持 * 参数
     if func is None:
         return partial(logged, level=level, name=name, message=message)
 

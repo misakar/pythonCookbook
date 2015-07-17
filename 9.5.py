@@ -14,9 +14,10 @@ from functools import wraps, partial
 import logging
 
 
+# 定义了一个访问器函数
 def attach_wrapper(obj, func=None):
     """向函数func添加obj属性"""
-    if fanc is None:
+    if func is None:
         return partial(attach_wrapper, obj)
     setattr(obj, func.__name__, func)
     return func
@@ -41,13 +42,13 @@ def logged(level, name=None, message=None):
         @attach_wrapper(wrapper)
         def set_level(newlevel):
             # nonlocal level # 使用nonlocal关键字可以让解释器在外层查找变量，从而可以修改变量
-            global level
+            nonlocal level
             level = newlevel
 
         @attach_wrapper(wrapper)
         def set_message(newmsg):
             # nonlocal logmsg
-            global logmsg
+            nonlocal logmsg
             logmsg = newmsg
 
         return wrapper
@@ -55,6 +56,10 @@ def logged(level, name=None, message=None):
 
 
 # 使用装饰器
-@logged
+@logged(logging.DEBUG)
 def test(x, y):
-    return x + y
+    return (x + y)
+
+
+test(2, 3)
+test.set_level(logging.WARNING)

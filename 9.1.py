@@ -3,8 +3,9 @@
 """
     9.1.py
     ~~~~~~
-    给函数添加一个包装
-    1. 元编程： 用美妙的函数或类来处理重复性的代码和工作
+
+        给函数添加一个包装
+        1. 元编程： 用美妙的函数或类来处理重复性的代码和工作
 """
 import time
 from functools import wraps # 导入装饰器模块
@@ -16,10 +17,9 @@ def time_func(func):
     def wrapper(*args, **kwargs):
         """wrapper 被修饰函数"""
         start = time.time()
-        result = func(*args, **kwargs)
         end = time.time()
         print ("The time of %s : %d") % (func.__name__, end - start)
-        return result
+        return func(*args, **kwargs)
     return wrapper
 
 
