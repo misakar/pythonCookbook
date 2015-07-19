@@ -11,7 +11,10 @@
 def apply_async(func, args, *, callback):
     result = func(*args)
 
+    # 回调result, result是函数func的运行结果
+    # apply_async 回调这个结果
     callback(result)
+
 
 # 使用这个回调函数
 def add(x, y):

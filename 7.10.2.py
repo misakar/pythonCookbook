@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# 单个变量的类
+# 单个方法的类
 class ResultHandler:
     def __init__(self):
         """保留sequence变量"""
@@ -9,8 +9,10 @@ class ResultHandler:
         self.sequence += 1
         print ("[{}] Got: {}".format(self.sequence, result))
 
+
 # 闭包函数替代
 def result_handler():
+    # 利用闭包保存　sequence　变量
     sequence = 0
     def handler(result):
         nonlocal sequence
