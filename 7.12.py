@@ -20,7 +20,15 @@ def close_func():
         nonlocal n
         n = value
 
+    def del_n():
+        del n
+    """
     # 把存取函数作为闭包的属性
     func.get_n = get_n
     func.set_n = set_n
+    func.del_n = del_n
+    """
+    property(get_n, set_n, del_n, 'I am the close_func')
+    del get_n, set_n, del_n
     return func
+# 现在n就是该闭包的属性，定义的存取函数可以与外界交互
