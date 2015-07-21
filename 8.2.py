@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 """
     8.2.py
     ~~~~~~
@@ -8,10 +8,11 @@
 # 定义一个控制字符串输出格式，可以被类使用的私有变量
 _formats = {
     # 格式化字符串，用于类的格式化输出
-    'ymd' : '{0.year}-{0.month}-{0.day}',
-    'myd' : '{0.month}/{0.year}/{0.day}',
-    'dym' : '{0.day}/{0.year}/{0.month}'
+    'ymd': '{0.year}-{0.month}-{0.day}',
+    'myd': '{0.month}/{0.year}/{0.day}',
+    'dym': '{0.day}/{0.year}/{0.month}'
 }
+
 
 class Date:
     """自定义输出日期类"""
@@ -21,6 +22,9 @@ class Date:
         self.month = month
 
     def __format__(self, form):
+        """__format__，类方法，
+        解释器会解释为 Date_format，
+        调用时 format(args)"""
         if form == '':
             form = 'ymd'
         fmt = _formats[form]

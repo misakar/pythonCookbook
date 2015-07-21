@@ -22,3 +22,8 @@ class Example:
 >> ex
 Example(1, 2)
 """
+
+
+# repr方法
+# repr实例的官方表示（官方：包含一些信息，而不是单纯的输出）,方便
+# 调试 obj = eval(repr(obj))

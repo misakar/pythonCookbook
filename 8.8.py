@@ -7,13 +7,16 @@
 """
 # 使用@porperty装饰器可以管理属性，使用super可以调用父类属性
 # 从而我们可以在子类扩展父类的属性
+# super 调用父类属性，porperty 重写属性方法
+
+
 class Persion:
     def __init__(self, name):
         self.name = name
 
     @property
     def name(self):
-        return self._name # 使用了模块的私有变量
+        return self._name  # 使用了模块的私有变量
 
     @name.setter
     def name(self, value):

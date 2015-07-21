@@ -17,7 +17,7 @@ class LazyConnection:
         self.address = address
         self.family = AF_INET
         self.type = SOCK_STREAM
-        # 将列表作为栈，用于存储连接
+        # 将列表作为栈，用于存储连接，以便建立多个链接
         self.connections = []
 
     def __enter__(self):
