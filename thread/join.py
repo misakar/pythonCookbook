@@ -6,9 +6,9 @@ import time
 
 def context(t_join):
     print "In thread context !"
-    t_join.start() # 开启线程
+    t_join.start()  # 开启线程
 
-    t_join.join() # 阻塞context线程
+    t_join.join()  # 阻塞context线程
 
     print "out thread context!" #
 

@@ -9,8 +9,8 @@
 import threading
 
 
-alist = None # 创建了一个空列表 一个资源
-condition = threading.Condition() # 创建了一个条件变量, 用于通知
+alist = None  # 创建了一个空列表 一个资源
+condition = threading.Condition()  # 创建了一个条件变量, 用于通知
 
 
 def doSet():
@@ -33,11 +33,11 @@ def doPrint():
 
 
 def doCreate():
-    global alist # 又声明了一个与主线程同名的全局alist
+    global alist  # 又声明了一个与主线程同名的全局alist
     if condition.acquire():
         if alist is None:
             alist = [0 for i in range(10)]
-            condition.notifyAll() # 通知所有线程
+            condition.notifyAll()  # 通知所有线程
         condition.release()
 
 

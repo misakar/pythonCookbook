@@ -18,7 +18,7 @@ def func():
 
 
 thr = threading.Thread(target=func)
-thr.start()
+thr.start()  # 函数线程
 
 
 # 2: 从Thread类继承，并重写run()
@@ -29,7 +29,7 @@ class MyThread(threading.Thread): # 类继承
 
 
 thre = MyThread()
-thre.start()
+thre.start()  # 类线程
 
 
 # Thread 类的构造方法:
@@ -45,7 +45,7 @@ thre.start()
 # get/setName(name): 获取/设置线程名
 # is/setDaemon(bool): 获取/设置是否守护线程
 # start(): 启动线程
-# join([timeout]): 阻塞当前上下文环境的线程，直到调用此方法的线程终止或达到指定的timeout
+# join([timeout]): 阻塞当前上下文环境中运行的线程，直到调用此方法的线程终止或达到指定的timeout
 
 
 # 使用join的例子(当前上下文环境)
