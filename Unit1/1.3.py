@@ -4,97 +4,35 @@
 """
     1.3.py
     ~~~~~~
+
         保存最后N个元素
-"""
-# 案例1:
-"""
-查找一系列文本行,如果存在匹配,输出当前文本行以及最后查找的N行文本
-"""
-"""
-python  collections  ------|
-                           |
-      Learing !!          \ /
-                           +
-"""
-# 1.namedtuple
-from collections import namedtuple
-websites = [
-    ('google', 'http://www.google.com/', u'LarryPage'),
-    ('Sina', 'http://www.sina.com.cn/', u'王志东'),
-    ('163', 'http://www.163.com/', u'丁磊')
-]
-<<<<<<< HEAD
-# 一旦创建了namedtuple对象，那么这个元组中的元素就可以通过名称访问。
-=======
->>>>>>> a9ce20f84a4016414dfb427ed0188b9e63d7959d
-Website = namedtuple('Website', ['name', 'url', 'founder']) # Website is a namedtuple Class, and website like self
-for website in websites:
-    website = Website._make(website)
-    print website
-    print website[0], website.url
 
-# 2.deque
-# what is deque: double-ended queue
-# An instresting example about deque
-import sys
-import time
+        # 案例1:
+        查找一系列文本行, 如果存在匹配, 输出当前文本行以及最后查找的N行文本
+"""
+
+# 案例：保存有限个历史纪录，使用 python collections 模块
+
+
 from collections import deque
-fancy_loding = deque(">"*20 + "-"*130)
-while True:
-    print "\r%s" % ''.join(fancy_loding)
-    fancy_loding.rotate(1)
-    sys.stdout.flush()
-    time.sleep(0.08)
-# so instresting !!!!
 
-# 3.Counter
-str = "This is a novel,sorry maybe this is a some thing instresting! ha ha ha , that's so fun ha "
-from collections import Counter
-c = Counter(str)
-print c.most_common(2)
 
-# OrderedDict
-# dict is hash but OrderedDict ?
-from collections import OrderedDict
-items = [
-    ('neo1218', '18'),
-    ('jack', '19'),
-    ('lily', '18')
-]
-# dict
-regular_dict = dict(items)
-print regular_dict
-# OrderDict
-order_dict = OrderedDict(items)
-print order_dict
-
-"""
-examples
-"""
-# example1:
 def search(lines, pattern, history=5):
-    previous_lines = deque(maxlen=history)
-    for line in previous_lines:
+    """文本查找函数, 函数返回一个生成器对象"""
+    previous_lines = deque(maxlen=history)  # 双端队列, 用于保存历史纪录
+    for line in lines:
         if pattern in line:
-            yield line, previous_lines
+            # 利用生成器
+            yield line, previous_lines  # (line, previous_line)
         previous_lines.append(line)
 
-# example1 use on file
+
+# 应用
 if __name__ == "__main__":
-    with open("1.3.txt") as f:
-<<<<<<< HEAD
-        for line, prev_lines in search(f, "python", 5):
-            for pline in prev_lines:
-                print(pline, end = '')
-            print(line, end = '')
-# defaultdict
-# 详见 1.6.py ！
-# 将列表、集合转化为字典的值并初始化第一个key，从而是程序员直接扩充
-=======
-        for line, prevlines in search(f, "python", 5):
-            for pline in prevlines:
-                print(pline, end='')
-            print(line, end='')
-
->>>>>>> a9ce20f84a4016414dfb427ed0188b9e63d7959d
-
+    with open('1.3.txt') as f:
+        # 生成器是可迭代的，也是可分解的
+        for line, previous in search(f, 'python', 5):
+            for pline in previous:
+                print(pline)
+            print(line)
+            print('-'*20)

@@ -19,4 +19,4 @@ PythonCookBook
 发现任何错误欢迎提issue或者pull request<br/>
 
 ## 进度
-整理先前提交的代码<br/>
+整理先前提交的代码: 整理至 1.3<br/>

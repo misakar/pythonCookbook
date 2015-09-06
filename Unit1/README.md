@@ -48,7 +48,10 @@ PythonCookBook 1: 数据结构与算法
                 yield line, previous_lines
             previous_lines.append(line)
 
-    search函数很好的将搜索过程与搜索纪录过程分离
+    当编写搜索某项纪录的代码时，通常会用到含有yield关键字的生成器函数,这将处理搜索过程的代码和
+    使用搜索结果的代码成功解耦开来。
 
+
+### 1.4: 找到最大或最小的N个元素
 
 
