@@ -52,6 +52,10 @@ PythonCookBook 1: 数据结构与算法
     使用搜索结果的代码成功解耦开来。
 
 
-### 1.4: 找到最大或最小的N个元素
+### 1.4: 找到集合中最大或最小的N个元素
 
+    使用heapq模块的nlargest和nsmallest函数
 
+### 1.5: 实现优先级队列
+
+    heappop 和 heappush 函数的使用
