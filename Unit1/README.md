@@ -59,3 +59,14 @@ PythonCookBook 1: 数据结构与算法
 ### 1.5: 实现优先级队列
 
     heappop 和 heappush 函数的使用
+
+### 1.6: 将一个键映射到多个值上
+
+    将键映射到多个值上，可以使用容器(ex:[])存放值
+    collections模块的 defaultdict类可以简化创建这种字典的操作
+        defaultdict(list)
+    而且defaultdict会自动初始化第一个键值
+
+## 1.7: 让字典保持有序
+
+    collections 模块的 OrderedDict 类
