@@ -70,3 +70,8 @@ PythonCookBook 1: 数据结构与算法
 ## 1.7: 让字典保持有序
 
     collections 模块的 OrderedDict 类
+
+## 1.8: 对字典进行相关计算
+
+    默认的一些操作函数 min、max、sorted对字典的计算会对键进行计算
+    但是使用zip函数可以将键值翻转，从而对值进行计算
