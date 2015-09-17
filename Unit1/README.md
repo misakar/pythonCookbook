@@ -88,3 +88,17 @@ PythonCookBook 1: 数据结构与算法
 
     当大量使用切片这样的硬编码方式时，最好通过命名进行管理
     python 内置类slice类方便我们进行切片的命名创建
+
+## 1.12: 找出序列中出现次数最多的元素
+
+    collections模块的Counter函数的使用
+    Counter对象可以接受任意可哈希的对象序列,
+    在底层实现中，Counter是一个字典，在元素和元素出现的次数间做了映射
+
+## 1.13: 通过公共键对字典列表排序
+
+    通过公共键对字典列表排序的关键是sorted的key函数需要设置为
+    我们希望设置的排序键
+
+    operator 模块的 itemgetter函数是一个很好的工具
+    key = itemgetter('key')

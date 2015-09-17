@@ -19,7 +19,7 @@ PythonCookBook
 发现任何错误欢迎提issue或者pull request<br/>
 
 ## 进度
-整理先前提交的代码: 整理至 1.11<br/>
+整理先前提交的代码: 整理至 1.13<br/>
 
 ## python 模块介绍 索引
 [collections模块](https://github.com/neo1218/pythonCookbook/tree/master/Unit1/collections)<br/>
