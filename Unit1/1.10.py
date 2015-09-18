@@ -11,6 +11,7 @@
 
 # 1. 序列中的对象是可哈希的
 def dedupe(items):
+    """从序列中移除重复项"""
     seen = set()
     for item in items:
         if item not in seen:

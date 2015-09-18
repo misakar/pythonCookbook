@@ -102,3 +102,8 @@ PythonCookBook 1: 数据结构与算法
 
     operator 模块的 itemgetter函数是一个很好的工具
     key = itemgetter('key')
+
+## 1.14: 对不原生支持比较操作符的对象排序
+
+    这里关键是sorted函数的key参数使用, 通过key参数可以获取
+    排序的依据
